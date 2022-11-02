@@ -6,5 +6,10 @@ const addFooditem = async(req,res)=>{
     res.status(200).json("Food item added successfully")
 }
 
+const getFooditem = async (req, res)=>{
+    const data = await foodmodel.find()
+    res.status(200).json(data)
+}
 
-module.exports={addFooditem}
+
+module.exports={addFooditem, getFooditem}
