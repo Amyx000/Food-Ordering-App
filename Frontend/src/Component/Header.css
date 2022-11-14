@@ -1,0 +1,18 @@
+
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr repeat(4,auto);
+    align-items: center;
+    gap: 30px;
+    padding:20px;
+}
+
+.header>div:nth-child(1){
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+}
+
+.header>div{
+    cursor: pointer;
+}

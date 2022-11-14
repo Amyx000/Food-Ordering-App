@@ -6,7 +6,7 @@ const foodschema = new mongoose.Schema({
         type:String,
         required:true
     },
-    foodDescription:{
+    foodCategory:{
         type:String,
         required:true
     },
@@ -23,6 +23,10 @@ const foodschema = new mongoose.Schema({
         required:true
     },
     restaurantAddress:{
+        type:String,
+        required:true
+    },
+    city:{
         type:String,
         required:true
     }
