@@ -1,7 +1,7 @@
 import React from "react"
 import "./Header.css"
 import {BsFillPersonFill} from "react-icons/bs"
-import {useLocation} from "react-router-dom"
+import {useLocation,Link} from "react-router-dom"
 
 const Header = () => {
 
@@ -10,10 +10,10 @@ const Header = () => {
     return (
         <>
             <div className="header" style={{"backgroundColor":`${location.pathname!=="/"?"white":"black"}`,"color":`${location.pathname!=="/"?"black":"white"}`}}>
-                <div>FooFood</div>
-                <div>Browse Food</div>
-                <div>Login</div>
-                <div>Sign Up</div>
+                <div><Link className="link" to={"/"} style={{"color":`${location.pathname!=="/"?"black":"white"}`}}><div className="header-icon">FooFood</div></Link></div>
+                <div><Link className="link" to={"/food"} style={{"color":`${location.pathname!=="/"?"black":"white"}`}}>Browse Food</Link></div>
+                <div><Link className="link" to={"/login"} style={{"color":`${location.pathname!=="/"?"black":"white"}`}}>Login</Link></div>
+                <div><Link className="link" to={"/signup"} style={{"color":`${location.pathname!=="/"?"black":"white"}`}}>Sign Up</Link></div>
                 <div style={{"fontSize":"22px","display":"grid","alignContent":"center"}}><BsFillPersonFill/></div>
             </div>
         </>

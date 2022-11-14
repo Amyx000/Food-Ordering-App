@@ -5,10 +5,11 @@
     grid-template-columns: 1fr repeat(4,auto);
     align-items: center;
     gap: 30px;
-    padding:20px;
+    padding:20px 40px;
+    transition: all 0.7s ease-out;
 }
 
-.header>div:nth-child(1){
+.header-icon{
     font-family: 'Lobster', cursive;
     font-size: 40px;
 }

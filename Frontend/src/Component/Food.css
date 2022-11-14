@@ -1,0 +1,53 @@
+
+.food-main{
+    margin: 0 40px;
+}
+.food-head{
+    display: grid;
+    grid-template-columns: 1fr repeat(4,auto);
+    gap:30px;
+    padding: 40px 5px 0;
+    box-shadow: inset 0 40px 40px -40px rgba(0, 0, 0, 0.089);
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
+}
+
+.food-head>div:nth-child(1){
+    font-size: 25px;
+}
+
+.food-head>div{
+    display: grid;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    color: rgba(29, 29, 29, 0.792);
+}
+
+.food-head>div:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.food-collection{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 20px;
+    row-gap:10px;
+}
+
+.food-collection img{
+    width: 255px;
+    border-radius: 10px;
+}
+
+.food-collection>div{
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.food-collection>div:hover{
+    border: 1px solid grey;
+}
