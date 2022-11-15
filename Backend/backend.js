@@ -7,7 +7,7 @@ const foodroute =require("./routes/foodroute")
 const userroute =require("./routes/userroute")
 
 app.use(express.json())
-app.use(cors({origin:"*"}))
+app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 
 
 app.use("/",foodroute)

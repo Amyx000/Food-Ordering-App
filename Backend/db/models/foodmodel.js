@@ -18,6 +18,10 @@ const foodschema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    time:{
+        type:Number,
+        required:true
+    },
     restaurant:{
         type:String,
         required:true

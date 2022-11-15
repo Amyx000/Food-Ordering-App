@@ -4,6 +4,8 @@ import "./app.css"
 import Food from "./Component/Food";
 import Header from "./Component/Header";
 import Home from "./Component/Home";
+import Login from "./Component/Login";
+import Signup from "./Component/Signup";
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<><Header /><Home/></>} />
           <Route path="/food" element={<><Header /><Food/></>} />
+          <Route path="/login" element={<><Header /><Login/></>} />
+          <Route path="/signup" element={<><Header /><Signup/></>} />
         </Routes>
       </BrowserRouter>
     </>
