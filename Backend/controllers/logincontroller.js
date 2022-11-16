@@ -42,6 +42,14 @@ const logoutUser =async (req,res)=>{
     }
 }
 
+const isAuth =(req,res)=>{
+    try {
+        res.status(200).json(true)
+    } catch (error) {
+        res.status(200).json(false)
+    }
+}
 
 
-module.exports={registerUser, loginUser, logoutUser}
+
+module.exports={registerUser, loginUser, logoutUser, isAuth}
