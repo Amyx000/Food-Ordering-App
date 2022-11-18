@@ -14,7 +14,8 @@ function Home() {
                     <div><FiSearch/></div>
                 </div>
             </div>
-            <img className='banner-img' src='https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png' alt=''/>
+            <img className='banner-img' src='https://images.unsplash.com/photo-1547573854-74d2a71d0826?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' alt=''/>
+            <div className='overlay'></div>
         </div>
     </div>
   )
