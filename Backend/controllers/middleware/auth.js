@@ -5,14 +5,14 @@ const authToken=(req,res,next)=>{
     if(token){
         const user = jwt.verify(token,process.env.JWT_SECKEY,(err,user)=>{
             if(err){
-                res.status(400).json(false)
+                res.status(200).json(false)
             }else{
                 req.user=user
                 next();
             }
         })
     }else{
-        res.status(400).json(false)
+        res.status(200).json(false)
     }
 }
 
