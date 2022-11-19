@@ -1,0 +1,47 @@
+
+
+.admin{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.admin div{
+    width: 100px;
+    border: 1px solid black;
+    aspect-ratio: 1;
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.admin div:hover{
+    background-color: black;
+    color: white !important;
+}
+.admin div:active{
+    background-color: black;
+    color: white;
+}
+
+.admin-template{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: rgb(232, 232, 232);
+    gap: 20px;
+    max-height: 310px;
+    overflow: auto;
+    padding: 10px 0;
+}
+.admin-template div{
+    height: max-content;
+}
+
+.icon{
+    cursor: pointer;
+}
+.icon-action{
+    display: flex;
+    justify-content: space-around;
+}

@@ -23,6 +23,11 @@ const Header = () => {
         navigate("/")
         Setmenu("header-menu-hide")
     }
+
+    const accountClick=()=>{
+        Setmenu("header-menu-hide")
+        navigate("/user/account/profile")
+    }
     
     return (
         <>
@@ -38,7 +43,7 @@ const Header = () => {
                 <div onMouseEnter={() => Setmenu("header-menu")} style={{ "fontSize": "22px", "display": "grid", "alignContent": "center" }}><Link className="link" to={"/account"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}><BsFillPersonFill /></Link></div>
                 <div className={menu} onMouseLeave={() => Setmenu("header-menu-hide")} style={{ "backgroundColor": `${location.pathname !== "/" ? "black" : "white"}`, "color": `${location.pathname !== "/" ? "white" : "black"}` }}>
                     <div onClick={logoutFunc}>Logout</div>
-                    <div>Account</div>
+                    <div onClick={accountClick}>Account</div>
                 </div>
             </div>
         </>

@@ -10,3 +10,16 @@
 .link{
     text-decoration: none;
 }
+.links{
+    text-decoration: none;
+    color: black;
+}
+
+
+.btn{
+    width: max-content;
+    padding: 7px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

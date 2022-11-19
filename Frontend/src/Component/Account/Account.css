@@ -1,0 +1,93 @@
+
+.account-main{
+    padding: 30px 5px;
+    box-shadow: inset 0 40px 40px -40px rgba(0, 0, 0, 0.089);
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.account-main div{
+    border-bottom: 2px solid transparent;
+}
+.account-main div:hover{
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+
+.acc-form{
+    text-align: center;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+.acc-form>div:nth-child(1){
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.acc-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.acc-form form input{
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+}
+.acc-form form button{
+    width: 50%;
+    height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+    background-color: black;
+    color: white;
+}
+
+.acc-form form button:active{
+    background-color: white;
+}
+
+.address{
+    display: grid;
+    gap:10px;
+    padding: 10px;
+}
+
+.address-btn{
+    display: flex;
+    justify-content: flex-end;
+    gap:20px;
+}
+
+.orders{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+.orders>div{
+    width: max-content;
+    display: grid;
+    justify-self: center;
+}
+
+
+@media screen and (max-width:750px) {
+    .acc-form{
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .acc-form{
+        width: 90vw;
+    }
+}

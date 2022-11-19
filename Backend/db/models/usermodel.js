@@ -12,6 +12,29 @@ const userschema = new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    addresses:[
+        {
+            shipname:{
+                type:String
+            },
+            street:{
+                type:String
+            },
+            city:{
+                type:String
+            },
+            pincode:{
+                type:String
+            },
+            state:{
+                type:String
+            },
+        }
+    ],
+    type:{
+        type:String,
+        default:"user"
     }
 })
 

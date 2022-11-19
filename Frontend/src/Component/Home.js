@@ -10,7 +10,7 @@ function Home() {
                 <div>FooFood</div>
                 <div>Get instant Hot & Tasty food delivered to your home </div>
                 <div>
-                    <input type={"text"}/>
+                    <input type={"text"} placeholder="Search food/restaurants"/>
                     <div><FiSearch/></div>
                 </div>
             </div>
