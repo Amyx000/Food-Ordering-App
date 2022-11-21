@@ -1,49 +1,20 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { RiDeleteBinLine } from "react-icons/ri"
 import {GrEdit} from "react-icons/gr"
+import { useNavigate } from 'react-router-dom'
 
 function User() {
   const [users,Setusers]=useState([])
-  // const data = {
-  //   users: [
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //     {
-  //       id: "12565625612156",
-  //       email: "admin.com",
-  //       role: "Admin"
-  //     },
-  //   ]
-  // }
+  const navigate=useNavigate()
+
+  const updateUser=(id)=>{
+    navigate(`./updateuser/${id}`)
+  }
 
   useEffect(()=>{
     async function getusers(){
       try {
-        const res=await axios.get("http://localhost:5000/user/admin/getusers",{withCredentials:true})
+        const res=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/admin/getusers`,{withCredentials:true})
         Setusers(res.data)
       } catch (error) {
         console.log(error)
@@ -69,7 +40,7 @@ function User() {
                   <div>{index + 1}</div>
                   <div>{item.email}</div>
                   <div>{item.type}</div>
-                  <div><GrEdit className='icon' /></div>
+                  <div><GrEdit className='icon' onClick={()=>updateUser(item._id)}/></div>
                 </React.Fragment>
               )
             })}

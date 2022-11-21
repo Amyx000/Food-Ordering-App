@@ -16,6 +16,9 @@ import Login from "./Component/Login";
 import Signup from "./Component/Signup";
 import Users from "./Component/Account/Admin/Users"
 import Orders from "./Component/Account/Admin/Orders";
+import Addfood from "./Component/Account/Admin/Addfood";
+import Updatefood from "./Component/Account/Admin/Updatefood";
+import Updateuser from "./Component/Account/Admin/Updateuser";
 
 function App() {
 
@@ -34,7 +37,10 @@ function App() {
           <Route path="/user/account/orders" element={<><Header /><Account/><Order/></>} />
           <Route path="/user/account/admin" element={<><Header /><Account/><Admin/></>} />
           <Route path="/user/account/admin/foods" element={<><Header /><Account/><Foods/></>} />
+          <Route path="/user/account/admin/foods/updatefood/:id" element={<><Header /><Account/><Updatefood/></>} />
+          <Route path="/user/account/admin/foods/addfood" element={<><Header /><Account/><Addfood/></>} />
           <Route path="/user/account/admin/users" element={<><Header /><Account/><Users/></>} />
+          <Route path="/user/account/admin/users/updateuser/:id" element={<><Header /><Account/><Updateuser/></>} />
           <Route path="/user/account/admin/orders" element={<><Header /><Account/><Orders/></>} />
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,14 @@
 const express = require("express")
 const router = express.Router()
 
-const { addFooditem, getFooditem, deleteFood, updateFood } = require("../controllers/foodcontroller");
+const {authTokenAdmin, authToken} =require("../controllers/middleware/auth")
 
-router.post("/addfood",addFooditem)
+const { addFooditem, getFooditem, deleteFood, updateFood, getfoodbyid } = require("../controllers/foodcontroller");
+
+router.post("/addfood",authTokenAdmin,addFooditem)
 router.get("/getfood",getFooditem)
-router.get("/deletefood/:id",deleteFood)
-router.post("/updatefood/:id",updateFood)
+router.get("/getfoodbyid/:id",authTokenAdmin,getfoodbyid)
+router.get("/deletefood/:id",authTokenAdmin,deleteFood)
+router.post("/updatefood/:id",authTokenAdmin,updateFood)
 
 module.exports=router;
