@@ -15,7 +15,9 @@
     font-family: 'Lobster', cursive;
     font-size: 40px;
 }
-
+.header>div:nth-child(1){
+    width: max-content;
+}
 .header>div{
     cursor: pointer;
 }
@@ -27,8 +29,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* background-color: black;
-    color: white; */
     grid-column: 2/6;
     position: absolute;
     top: 0;
