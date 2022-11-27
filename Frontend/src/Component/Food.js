@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import "./Food.css"
 import { BsFilter } from "react-icons/bs"
 import axios from "axios"
-import { useDispatch } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { getallfoods } from '../Redux/Reducers/FoodReducer'
 import {BsCart4} from "react-icons/bs"
+import { additem } from '../Redux/Reducers/CartReducer'
 
 
 function Food() {
@@ -19,6 +20,10 @@ function Food() {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const addtocart = (item)=>{
+    dispatch(additem(item))
   }
 
   useEffect(() => {
@@ -76,7 +81,7 @@ function Food() {
         {food.map((item, index) => {
           return (
             <div key={index} style={{"position":"relative"}}>
-              <img src={item.foodimg} alt='' />
+              <img src={item.foodimg} alt={"img.jpg"} />
               <div>{item.foodname}</div>
               <div style={{ "color": "grey", "fontSize": "13px","display": "flex", "justifyContent": "space-around"  }}>
                 <div>By {item.restaurant}</div>
@@ -87,7 +92,7 @@ function Food() {
                 <div>{item.cost} Rs</div>
               </div>
               <div className="hover-box">
-                <BsCart4 className='cart-icon'/>
+                <BsCart4 onClick={()=>addtocart(item)} className='cart-icon'/>
               </div>
             </div>
           )

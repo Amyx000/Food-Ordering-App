@@ -83,3 +83,7 @@
     color: red;
     transform: scale(1.09);
 }
+
+.cart-icon:active{
+    color: white;
+}

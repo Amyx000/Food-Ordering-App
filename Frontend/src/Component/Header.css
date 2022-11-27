@@ -18,11 +18,13 @@
 .header>div:nth-child(1){
     width: max-content;
 }
+
 .header>div{
     cursor: pointer;
+    font-weight: bold;
 }
-.header>div:nth-child(5){
-    padding-right: 40px
+.header>div:nth-child(4){
+    margin-right: 10px;
 }
 
 .header-menu-hide{
@@ -38,13 +40,13 @@
     cursor: default !important;
     transform: translateX(100%);
     transition: all 0.3s ease-in-out;
+    z-index: 100;
+
 }
 .header-menu{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* background-color: black;
-    color: white; */
     grid-column: 2/6;
     position: absolute;
     top: 0;
@@ -54,6 +56,7 @@
     cursor: default !important;
     transform: translateX(0);
     transition: all 0.3s ease-in-out;
+    z-index: 100;
 }
 
 .header-menu div{
