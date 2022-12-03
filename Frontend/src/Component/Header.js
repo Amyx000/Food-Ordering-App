@@ -53,7 +53,7 @@ const Header = () => {
                     </Link>
                 </div>
 
-                <div onMouseEnter={() => Setmenu("header-menu")} style={{ "display": "grid", "alignContent": "center" }}>
+                <div className="acc-icon" onMouseEnter={() => Setmenu("header-menu")} style={{ "display": "grid", "alignContent": "center" }}>
                     <Link className="link" to={"/account"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>
                         <Badge badgeContent={0} color="primary">
                             <PersonIcon />
@@ -61,7 +61,8 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className={menu} onMouseLeave={() => Setmenu("header-menu-hide")} style={{ "backgroundColor": `${location.pathname !== "/" ? "black" : "white"}`, "color": `${location.pathname !== "/" ? "white" : "black"}` }}>
-                    <div onClick={logoutFunc}>Logout</div>
+                    {auth?<div onClick={logoutFunc}>Logout</div>:
+                    <div>About</div>}
                     <div onClick={accountClick}>Account</div>
                 </div>
             </div>

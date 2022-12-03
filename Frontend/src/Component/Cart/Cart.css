@@ -1,6 +1,6 @@
 
 .table-main{
-    height: 255px;
+    max-height: 255px;
     overflow: auto;
     margin-bottom: 20px !important;
 }
@@ -16,29 +16,70 @@
 }
 
 .table{
+    margin: 0 !important;
     text-align: center;
-    font-size: 20px;
     width: 100%;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
 }
-.table-head{
+.table-col{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.table div {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+.table-col-head{
     background-color: rgba(0, 0, 0, 0.525);
+    font-weight: bold !important;
     border-radius: 15px;
     position: sticky;
     top:0;
     left: 0;
     right: 0;
+    z-index: 100;
 }
 
-.table tr{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 5px;
-    font-weight: 400;
-
+.table-col-items{
+    transition: all 0.5s ease-in-out;
+    border-radius: 15px;
+    position: relative;
 }
-.table tr th {
-    border-bottom: 2px solid white;
 
+.table-onhover{
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.table-onhover:hover{
+    color: black;
+    visibility: visible;
+    background-color: white;
+    opacity: 1;
+}
+
+.dlt-cart-icon{
+    font-size: 25px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.dlt-cart-icon:hover{
+    color: red;
+    font-size: 30px;
 }
 
 .checkout-btn{

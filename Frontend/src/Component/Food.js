@@ -23,7 +23,12 @@ function Food() {
   }
 
   const addtocart = (item)=>{
-    dispatch(additem(item))
+    dispatch(additem({
+      _id:item._id,
+      foodname:item.foodname,
+      cost:item.cost,
+      qty:1,
+    }))
   }
 
   useEffect(() => {
