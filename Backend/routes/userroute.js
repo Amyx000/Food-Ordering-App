@@ -1,7 +1,7 @@
 const express = require("express")
 const { registerUser, loginUser, logoutUser, isAuth } = require("../controllers/logincontroller")
 const {authToken, authTokenAdmin} = require("../controllers/middleware/auth")
-const { getAllusers, getuserbyid, updateuserbyid, updateLoggeduser, getloggeduser } = require("../controllers/middleware/usercontroller")
+const { getAllusers, getuserbyid, updateuserbyid, updateLoggeduser, getloggeduser, addAddress, updateAddress, deleteAddress } = require("../controllers/middleware/usercontroller")
 const router =express.Router()
 
 
@@ -14,6 +14,9 @@ router.get("/admin/getuserbyid/:id",authTokenAdmin,getuserbyid)
 router.post("/admin/updateuser/:id",authTokenAdmin,updateuserbyid)
 router.post("/loggedupdate",authToken,updateLoggeduser)
 router.get("/loggeduser",authToken,getloggeduser)
+router.post("/addaddress",authToken,addAddress)
+router.get("/deleteaddress/:id",authToken,deleteAddress)
+router.post("/updateaddress/:id",authToken,updateAddress) //need to be change to post this is test
 
 module.exports=router
 

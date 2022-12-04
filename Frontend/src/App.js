@@ -20,6 +20,7 @@ import Addfood from "./Component/Account/Admin/Addfood";
 import Updatefood from "./Component/Account/Admin/Updatefood";
 import Updateuser from "./Component/Account/Admin/Updateuser";
 import Cart from "./Component/Cart/Cart";
+import Checkout from "./Component/Checkout/Checkout";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<><Header /><Home/></>} />
           <Route path="/food" element={<><Header /><Food/></>} />
           <Route path="/cart" element={<><Header /><Cart/></>} />
+          <Route path="/checkout" element={<><Header /><Checkout/></>} />
           <Route path="/login" element={<><Header /><Login/></>} />
           <Route path="/signup" element={<><Header /><Signup/></>} />
           <Route path="/user/account/profile" element={<><Header /><Account/><Profile/></>} />

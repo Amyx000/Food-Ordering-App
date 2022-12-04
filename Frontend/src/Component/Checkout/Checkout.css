@@ -1,0 +1,22 @@
+
+
+.checkout{
+    display: grid;
+    align-items: center;
+}
+
+.checkout select{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.708);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkout option {
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: normal !important;
+    white-space: normal;
+}

@@ -10,7 +10,8 @@ const cartslice = createSlice({
                 cost: 0,
                 qty: 0
             }
-        ]
+        ],
+        total:0
     },
     reducers: {
         additem: (state, action) => {
@@ -28,11 +29,21 @@ const cartslice = createSlice({
             }else{
                 state.items.push(action.payload)
             }
+            let total=0
+            state.items.forEach((val)=>{
+                total+=val.cost
+            })
+            state.total=total
         },
         removeitem: (state, action) => {
             state.items = state.items.filter((value) => {
                 return value._id !== action.payload
             })
+            let total=0
+            state.items.forEach((val)=>{
+                total+=val.cost
+            })
+            state.total=total
         }
     }
 })
