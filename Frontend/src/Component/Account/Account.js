@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {NavLink } from 'react-router-dom'
 import "./Account.css"
 
 function Account() {
   return (
     <div className='account-main'>
-        <div><Link to={"/user/account/profile"} className="links">Profile</Link></div>
-        <div><Link to={"/user/account/addresses"} className="links">Addresses</Link></div>
-        <div><Link to={"/user/account/orders"} className="links">Orders</Link></div>
-        <div><Link to={"/user/account/admin"} className="links">Admin</Link></div>
+        <div><NavLink to={"/user/account/profile"} className={({isActive})=>isActive?"activestyle" : "notactivestyle"}>Profile</NavLink></div>
+        <div><NavLink to={"/user/account/addresses"} className={({isActive})=>isActive?"activestyle" : "notactivestyle"}>Addresses</NavLink></div>
+        <div><NavLink to={"/user/account/orders"} className={({isActive})=>isActive?"activestyle" : "notactivestyle"}>Orders</NavLink></div>
+        <div><NavLink to={"/user/account/admin"} className={({isActive})=>isActive?"activestyle" : "notactivestyle"}>Admin</NavLink></div>
     </div>
   )
 }

@@ -21,6 +21,9 @@ import Updatefood from "./Component/Account/Admin/Updatefood";
 import Updateuser from "./Component/Account/Admin/Updateuser";
 import Cart from "./Component/Cart/Cart";
 import Checkout from "./Component/Checkout/Checkout";
+import Payment from "./Component/Checkout/Payment";
+import Error from "./Component/Error.js/Error";
+import Updateorder from "./Component/Account/Admin/Updateorder";
 
 function App() {
 
@@ -29,9 +32,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Home/></>} />
+          <Route path="/*" element={<Error/>} />
           <Route path="/food" element={<><Header /><Food/></>} />
           <Route path="/cart" element={<><Header /><Cart/></>} />
           <Route path="/checkout" element={<><Header /><Checkout/></>} />
+          <Route path="/checkout/payment" element={<Payment/>} />
           <Route path="/login" element={<><Header /><Login/></>} />
           <Route path="/signup" element={<><Header /><Signup/></>} />
           <Route path="/user/account/profile" element={<><Header /><Account/><Profile/></>} />
@@ -46,6 +51,7 @@ function App() {
           <Route path="/user/account/admin/users" element={<><Header /><Account/><Users/></>} />
           <Route path="/user/account/admin/users/updateuser/:id" element={<><Header /><Account/><Updateuser/></>} />
           <Route path="/user/account/admin/orders" element={<><Header /><Account/><Orders/></>} />
+          <Route path="/user/account/admin/orders/updateorder/:id" element={<><Header /><Account/><Updateorder/></>} />
         </Routes>
       </BrowserRouter>
     </>

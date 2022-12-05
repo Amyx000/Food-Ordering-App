@@ -6,6 +6,7 @@ const dotenv= require("dotenv").config({path:".env.development.local"})
 require("./db/config")
 const foodroute =require("./routes/foodroute")
 const userroute =require("./routes/userroute")
+const orderroute=require("./routes/orderroute")
 
 app.use(express.json())
 app.use(cors({credentials: true, origin: "http://localhost:3000"}))
@@ -13,5 +14,6 @@ app.use(cookieParser())
 
 app.use("/",foodroute)
 app.use("/user",userroute)
+app.use("/",orderroute)
 
 app.listen(process.env.PORT)

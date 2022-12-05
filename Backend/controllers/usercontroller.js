@@ -1,4 +1,4 @@
-const usermodel = require("../../db/models/usermodel")
+const usermodel = require("../db/models/usermodel")
 
 
 

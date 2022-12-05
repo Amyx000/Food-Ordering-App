@@ -20,3 +20,14 @@
     word-wrap: normal !important;
     white-space: normal;
 }
+
+.placed{
+    box-shadow: 2px 2px 2px 3px green;
+    width: max-content;
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    text-align: center;
+}

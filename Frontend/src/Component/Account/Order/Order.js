@@ -1,47 +1,49 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 function Order() {
 
-    const data = {
-        orders: [
-            {
-                foodname: "Pizza",
-                restaurantName: "Dominos",
-                amount: 500,
-                time: 30,
-                status: "pending"
-            },
-            {
-                foodname: "Burger",
-                restaurantName: "Mcdonal's",
-                amount: 300,
-                time: 25,
-                status: "pending"
-            },
-        ]
-    }
+    const [orders, Setorders] = useState([])
+
+
+    useEffect(() => {
+        async function getorders() {
+            try {
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/order/loggedorders`, { withCredentials: true })
+                Setorders(res.data)
+            } catch (error) {
+
+            }
+        }
+        getorders()
+    })
+
     return (
         <div>
             <div className='acc-form'>
                 <div>Orders</div>
-                {data.orders.length ? <div className='orders'>
-                    <div style={{ "borderBottom": "2px solid black" }}>No</div>
+                {orders.length ? <div className='orders'>
+                    <div style={{ "borderBottom": "2px solid black" }}>Qty</div>
                     <div style={{ "borderBottom": "2px solid black" }}>Details</div>
                     <div style={{ "borderBottom": "2px solid black" }}>Estimated Time</div>
                     <div style={{ "borderBottom": "2px solid black" }}>Status</div>
 
-                    {data.orders.map((item, index) => {
+                    {orders.map((item) => {
                         return (
-                            <>
-                                <div>{index + 1}</div>
-                                <div>
-                                    <div>{item.foodname}</div>
-                                    <div>by {item.restaurantName}</div>
-                                    <div>Rs {item.amount}</div>
-                                </div>
-                                <div>{item.time} min</div>
-                                <div>{item.status}</div>
-                            </>
+                            item.order.map((inner, index) => {
+                                return (
+                                    <React.Fragment key={inner._id}>
+                                        <div>{inner.qty}</div>
+                                        <div>
+                                            <div>{inner.food.foodname}</div>
+                                            <div>by {inner.food.restaurant}</div>
+                                            <div>Rs {inner.amount}</div>
+                                        </div>
+                                        <div>{inner.food.time} min</div>
+                                        <div>{inner.orderstatus}</div>
+                                    </React.Fragment>
+                                )
+                            })
                         )
                     })}
                 </div>

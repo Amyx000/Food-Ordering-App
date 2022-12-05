@@ -52,11 +52,11 @@ function UpdateAddress() {
             <div className='acc-form'>
                 <div>Update Address</div>
                 <form onSubmit={handleSubmit}>
-                    <input type={"text"} placeholder="Shipping name" value={address.shipname} onChange={e=>Setaddress(prev=>({...prev,shipname:e.target.value}))}/>
-                    <input type={"text"} placeholder="Street" value={address.street} onChange={e=>Setaddress(prev=>({...prev,street:e.target.value}))}/>
-                    <input type={"text"} placeholder="City" value={address.city} onChange={e=>Setaddress(prev=>({...prev,city:e.target.value}))}/>
-                    <input type={"text"} placeholder="Pincode" value={address.pincode} onChange={e=>Setaddress(prev=>({...prev,pincode:e.target.value}))}/>
-                    <input type={"text"} placeholder="State" value={address.state} onChange={e=>Setaddress(prev=>({...prev,state:e.target.value}))}/>
+                    <input type={"text"} placeholder="Shipping name" value={address.shipname} onChange={e=>Setaddress(prev=>({...prev,shipname:e.target.value}))} required/>
+                    <input type={"text"} placeholder="Street" value={address.street} onChange={e=>Setaddress(prev=>({...prev,street:e.target.value}))} required/>
+                    <input type={"text"} placeholder="City" value={address.city} onChange={e=>Setaddress(prev=>({...prev,city:e.target.value}))} required/>
+                    <input type={"text"} placeholder="Pincode" value={address.pincode} onChange={e=>Setaddress(prev=>({...prev,pincode:e.target.value}))} required/>
+                    <input type={"text"} placeholder="State" value={address.state} onChange={e=>Setaddress(prev=>({...prev,state:e.target.value}))} required/>
                     <button type='submit'>Update</button>
                 </form>
             </div>

@@ -90,6 +90,12 @@
     justify-self: center;
 }
 
+.order-form div{
+    border :1px solid rgb(182, 180, 180);
+    width: 100%;
+    padding: 5px;
+}
+
 
 @media screen and (max-width:750px) {
     .acc-form{
