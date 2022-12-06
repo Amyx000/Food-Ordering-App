@@ -28,7 +28,7 @@ import Updateorder from "./Component/Account/Admin/Updateorder";
 function App() {
 
   return (
-    <>
+    <div style={{"marginTop":"90px"}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Home/></>} />
@@ -54,7 +54,7 @@ function App() {
           <Route path="/user/account/admin/orders/updateorder/:id" element={<><Header /><Account/><Updateorder/></>} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

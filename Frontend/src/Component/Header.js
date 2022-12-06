@@ -6,6 +6,7 @@ import Badge from '@mui/material/Badge';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import PersonIcon from '@mui/icons-material/Person';
 import { useSelector } from "react-redux";
+import Mobheader from "./Header/Mobheader";
 
 const Header = () => {
     const [menu, Setmenu] = useState("header-menu-hide")
@@ -66,6 +67,7 @@ const Header = () => {
                     <div onClick={accountClick}>Account</div>
                 </div>
             </div>
+            <Mobheader/>
         </>
     )
 }
