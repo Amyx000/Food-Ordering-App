@@ -59,6 +59,10 @@
     z-index: 100;
 }
 
+.header-menu div:hover{
+    border-bottom: 2px solid;
+}
+
 .header-menu div{
     cursor: pointer !important;
 }

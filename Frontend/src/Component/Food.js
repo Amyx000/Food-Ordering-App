@@ -6,11 +6,14 @@ import { useDispatch} from 'react-redux'
 import { getallfoods } from '../Redux/Reducers/FoodReducer'
 import {BsCart4} from "react-icons/bs"
 import { additem } from '../Redux/Reducers/CartReducer'
+import { useLocation } from 'react-router-dom'
 
 
 function Food() {
   const dispatch = useDispatch()
   const [food, Setfood] = useState([])
+  const location = useLocation()
+  const search = location.search.split("=")[1]||""
 
   async function getfood() {
     try {
@@ -83,7 +86,9 @@ function Food() {
 
       <div className='food-collection'>
 
-        {food.map((item, index) => {
+        {food.filter((item)=>{
+          return item.foodname.match(new RegExp(search,"i")) || item.restaurant.match(new RegExp(search,"i"))
+        }).map((item, index) => {
           return (
             <div key={index} style={{"position":"relative"}}>
               <img src={item.foodimg} alt={"img.jpg"} />
@@ -102,7 +107,6 @@ function Food() {
             </div>
           )
         })}
-
       </div>
     </div>
   )
