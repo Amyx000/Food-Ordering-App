@@ -37,24 +37,18 @@ function Filter(props) {
     }, [])
 
     const handleChecked=(e)=>{
-        // Setcheck(prev=>({...prev,category:[...prev.category,e.target.value]}))
         const {name, checked, value}=e.target
         if(checked){
             Setcheck(prev=>({...prev,[name]:[...prev[name],value]}))
         }
         else{
-            // Setcheck(prev=>({...prev,prev[name]:check[name].filter((v)=>
-            //    ( v!==value)
-            // )}))
             Setcheck(prev=>({
                 ...prev,[name]:check[name].filter((v)=>(
                     v!==value
                 ))
             }))
         }
-       
     }
-    console.log(check)
 
     return (
         <div className={props.clss}>
