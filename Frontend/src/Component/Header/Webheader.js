@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import "./Header.css"
+import "./Webheader.css"
 import { useLocation, Link, useNavigate } from "react-router-dom"
 import Badge from '@mui/material/Badge';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import PersonIcon from '@mui/icons-material/Person';
 import { useSelector } from "react-redux";
-import Mobheader from "./Header/Mobheader";
+import Mobheader from "./Mobheader";
 
-const Header = () => {
+const Webheader = () => {
     const [menu, Setmenu] = useState("header-menu-hide")
     const location = useLocation()
     const [auth, Setauth] = useState(false)
@@ -41,10 +41,11 @@ const Header = () => {
                 <div><Link className="link" to={"/"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}><div className="header-icon">FooFood</div></Link></div>
                 <div><Link className="link" to={"/food"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Browse Food</Link></div>
 
-                {!auth ? <>
+                {/* {!auth ? <>
                     <div><Link className="link" to={"/login"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Login</Link></div>
                     <div><Link className="link" to={"/signup"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Sign Up</Link></div>
-                </> : null}
+                </> : null} */}
+                <div><Link className="link" to={"/about "} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>About</Link></div>
 
                 <div style={{ "display": "grid", "alignContent": "center" }}>
                     <Link className="link" to={"/cart"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>
@@ -62,15 +63,20 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className={menu} onMouseLeave={() => Setmenu("header-menu-hide")} style={{ "backgroundColor": `${location.pathname !== "/" ? "black" : "white"}`, "color": `${location.pathname !== "/" ? "white" : "black"}` }}>
-                    {auth?<div onClick={logoutFunc}>Logout</div>:
-                    <div>About</div>}
-                    <div onClick={accountClick}>Account</div>
+                    {!auth ? <>
+                        <div><Link className="link" to={"/login"} style={{ "color": `${location.pathname !== "/" ? "white" : "black"}` }}>Login</Link></div>
+                        <div><Link className="link" to={"/signup"} style={{ "color": `${location.pathname !== "/" ? "white" : "black"}` }}>Sign Up</Link></div>
+                    </> :
+                        <>
+                            <div onClick={accountClick}>Account</div>
+                            <div onClick={logoutFunc}>Logout</div>
+                    </>}
                 </div>
             </div>
-            <Mobheader/>
+            <Mobheader />
         </>
     )
 }
 
 
-export default Header
+export default Webheader

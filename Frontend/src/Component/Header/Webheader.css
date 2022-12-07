@@ -2,7 +2,7 @@
 
 .header{
     display: grid;
-    grid-template-columns: 1fr repeat(5,auto);
+    grid-template-columns: 1fr repeat(4,auto);
     align-items: center;
     gap: 30px;
     padding:20px 0px 20px 40px;

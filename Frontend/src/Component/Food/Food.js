@@ -3,10 +3,11 @@ import "./Food.css"
 import { BsFilter } from "react-icons/bs"
 import axios from "axios"
 import { useDispatch} from 'react-redux'
-import { getallfoods } from '../Redux/Reducers/FoodReducer'
+import { getallfoods } from '../../Redux/Reducers/FoodReducer'
 import {BsCart4} from "react-icons/bs"
-import { additem } from '../Redux/Reducers/CartReducer'
+import { additem } from '../../Redux/Reducers/CartReducer'
 import { useLocation } from 'react-router-dom'
+import Filter from "./Filter"
 
 
 function Food() {
@@ -14,12 +15,15 @@ function Food() {
   const [food, Setfood] = useState([])
   const location = useLocation()
   const search = location.search.split("=")[1]||""
+  const[filter,Setfilter]=useState("filter-hide")
 
   async function getfood() {
     try {
       const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getfood`, { withCredentials: true })
       dispatch(getallfoods(res.data))
-      Setfood(res.data)
+      Setfood(res.data.filter((item)=>{
+        return item.foodname.match(new RegExp(search,"i")) || item.restaurant.match(new RegExp(search,"i"))
+      }))
     } catch (error) {
       console.log(error)
     }
@@ -71,6 +75,15 @@ function Food() {
     }))
   }
 
+  const filterFunc=()=>{
+    if(filter==="filter"){
+      Setfilter("filter-hide")
+    }else{
+      Setfilter("filter")
+    }
+  }
+
+
   return (
     <div className='food-main'>
       <div className='food-head'>
@@ -79,25 +92,23 @@ function Food() {
         <div onClick={()=>sort_func(true)}>Cost: Low to High</div>
         <div onClick={()=>sort_func(false)}>Cost: High to Low</div>
         <div style={{ "display": "flex", "gap": "5px" }}>
-          <div>Filter</div>
-          <BsFilter />
+          <div onClick={filterFunc}>Filter</div>
+          <BsFilter/>
         </div>
       </div>
 
       <div className='food-collection'>
 
-        {food.filter((item)=>{
-          return item.foodname.match(new RegExp(search,"i")) || item.restaurant.match(new RegExp(search,"i"))
-        }).map((item, index) => {
+        {food.map((item, index) => {
           return (
-            <div key={index} style={{"position":"relative"}}>
+            <div className='single-card' key={index} style={{"position":"relative"}}>
               <img src={item.foodimg} alt={"img.jpg"} />
               <div>{item.foodname}</div>
-              <div style={{ "color": "grey", "fontSize": "13px","display": "flex", "justifyContent": "space-around"  }}>
+              <div style={{ "color": "grey", "fontSize": "13px","display": "flex", "justifyContent": "space-around", "width":"260px","margin":"0 auto"  }}>
                 <div>By {item.restaurant}</div>
                 <div>{item.foodCategory}</div>
               </div>
-              <div style={{ "display": "flex", "justifyContent": "space-around" }}>
+              <div style={{ "display": "flex", "justifyContent": "space-around", "width":"260px","margin":"0 auto" }}>
                 <div>{item.time} min</div>
                 <div>{item.cost} Rs</div>
               </div>
@@ -107,6 +118,7 @@ function Food() {
             </div>
           )
         })}
+        <Filter clss={filter} func={filterFunc}/>
       </div>
     </div>
   )

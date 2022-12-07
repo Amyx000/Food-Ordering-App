@@ -1,0 +1,57 @@
+
+.filter{
+    display: block !important;
+    transform: translateX(0);
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    z-index: 10000;
+    cursor:default !important;
+}
+.filter-hide{
+    display: block !important;
+    transform: translateX(110%);
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    z-index: 10000;
+    cursor:default !important;
+}
+
+.filter-section{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.filter-checkbox{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+.filter-checkbox input{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.filter-btn{
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}

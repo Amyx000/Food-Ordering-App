@@ -9,8 +9,8 @@ import Admin from "./Component/Account/Admin/Admin";
 import Foods from "./Component/Account/Admin/Foods";
 import Order from "./Component/Account/Order/Order";
 import Profile from "./Component/Account/Profile";
-import Food from "./Component/Food";
-import Header from "./Component/Header";
+import Food from "./Component/Food/Food";
+import Header from "./Component/Header/Header";
 import Home from "./Component/Home";
 import Login from "./Component/Login";
 import Signup from "./Component/Signup";
@@ -24,6 +24,7 @@ import Checkout from "./Component/Checkout/Checkout";
 import Payment from "./Component/Checkout/Payment";
 import Error from "./Component/Error.js/Error";
 import Updateorder from "./Component/Account/Admin/Updateorder";
+import About from "./Component/About/About";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<><Header /><Home/></>} />
           <Route path="/*" element={<Error/>} />
+          <Route path="/about" element={<><Header /><About/></>} />
           <Route path="/food" element={<><Header /><Food/></>} />
           <Route path="/cart" element={<><Header /><Cart/></>} />
           <Route path="/checkout" element={<><Header /><Checkout/></>} />

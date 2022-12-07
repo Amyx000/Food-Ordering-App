@@ -1,0 +1,29 @@
+
+
+.about{
+    margin: 20px 20vw;
+    text-align: center;
+}
+
+.about>div:nth-child(1){
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.about>div:nth-child(2){
+    margin-top: 40px;
+    /* text-align: justify; */
+    font-size: 20px;
+}
+
+.about a{
+    text-decoration: none;
+    color: black;
+    font-size: 35px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.about a:hover{
+    transform: scale(1.1);
+}

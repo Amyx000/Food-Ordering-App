@@ -18,7 +18,7 @@ function Home() {
                 <div>FooFood</div>
                 <div>Get instant Hot & Tasty food delivered to your home </div>
                 <div>
-                    <input type={"text"} placeholder="Search food/restaurants" value={search} onChange={e=>Setsearch(e.target.value)}/>
+                    <input type={"text"} placeholder="Search food/restaurants" value={search} onChange={e=>Setsearch(e.target.value)} required/>
                     <div onClick={handleClick} onK style={{"cursor":"pointer"}}><FiSearch/></div>
                 </div>
             </div>

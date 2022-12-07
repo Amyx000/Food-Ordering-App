@@ -33,6 +33,12 @@
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     margin-top: 20px;
     row-gap:10px;
+    position: relative;
+}
+
+.single-card{
+    width: 300px;
+    margin: 0 auto 0 0;
 }
 
 .food-collection img{
@@ -89,4 +95,11 @@
 
 .cart-icon:active{
     color: white;
+}
+
+
+@media screen and (max-width:650px) {
+    .single-card{
+        margin: 0 auto;
+    }
 }
