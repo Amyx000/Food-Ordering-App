@@ -37,7 +37,7 @@ function Orders() {
               return (
                 item.order.map((inner) => {
                   return (
-                    <React.Fragment key={index}>
+                    <React.Fragment key={inner._id}>
                       <div>{inner.qty}</div>
                       <div>{inner.food.foodname}</div>
                       <div>{item.user.name}</div>

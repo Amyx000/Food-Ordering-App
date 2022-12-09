@@ -25,7 +25,7 @@ function Order() {
                 {orders.length ? <div className='orders'>
                     <div style={{ "borderBottom": "2px solid black" }}>Qty</div>
                     <div style={{ "borderBottom": "2px solid black" }}>Details</div>
-                    <div style={{ "borderBottom": "2px solid black" }}>Estimated Time</div>
+                    <div style={{ "borderBottom": "2px solid black" }}>Time</div>
                     <div style={{ "borderBottom": "2px solid black" }}>Status</div>
 
                     {orders.map((item) => {

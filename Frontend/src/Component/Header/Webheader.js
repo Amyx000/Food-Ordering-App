@@ -22,7 +22,7 @@ const Webheader = () => {
             Setauth(res.data)
         }
         authentication()
-    },)
+    },[menu])
 
     const logoutFunc = async () => {
         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, { withCredentials: true })
@@ -40,11 +40,6 @@ const Webheader = () => {
             <div className="header" style={{ "backgroundColor": `${location.pathname !== "/" ? "white" : "black"}`, "color": `${location.pathname !== "/" ? "black" : "white"}` }}>
                 <div><Link className="link" to={"/"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}><div className="header-icon">FooFood</div></Link></div>
                 <div><Link className="link" to={"/food"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Browse Food</Link></div>
-
-                {/* {!auth ? <>
-                    <div><Link className="link" to={"/login"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Login</Link></div>
-                    <div><Link className="link" to={"/signup"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>Sign Up</Link></div>
-                </> : null} */}
                 <div><Link className="link" to={"/about "} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>About</Link></div>
 
                 <div style={{ "display": "grid", "alignContent": "center" }}>
@@ -56,7 +51,7 @@ const Webheader = () => {
                 </div>
 
                 <div className="acc-icon" onMouseEnter={() => Setmenu("header-menu")} style={{ "display": "grid", "alignContent": "center" }}>
-                    <Link className="link" to={"/account"} style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>
+                    <Link className="link" style={{ "color": `${location.pathname !== "/" ? "black" : "white"}` }}>
                         <Badge badgeContent={0} color="primary">
                             <PersonIcon />
                         </Badge>

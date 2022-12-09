@@ -41,7 +41,7 @@ function Adresses() {
             <div className='acc-form'>
                 <div>Addresses</div>
                 <div className='address'>
-                    {address[0].shipname ? <>
+                    {address[0]?.shipname ? <>
                         {address.map((item, index) => {
                             return (
                                 <div key={index} style={{ "textAlign": "left" }}>

@@ -16,6 +16,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 .headermob>div:nth-child(1){
     width: max-content;
@@ -39,6 +40,8 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    font-size: 20px;
+    font-weight: bold;
 }
 .header-col-menu-hide{
     transform:translateX(100%);
@@ -53,8 +56,27 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    font-size: 20px;
+    font-weight: bold;
 }
 
+.header-col-menu div{
+    width: max-content;
+    margin: 0 auto;
+    border-bottom: 2px solid transparent;
+}
+.header-col-menu-hide div{
+    width: max-content;
+    margin: 0 auto;
+    border-bottom: 2px solid transparent;
+}
+
+.header-col-menu div:hover{
+    border-bottom: 2px solid black;
+}
+.header-col-menu div:active{
+    border-bottom: 2px solid black;
+}
 
 @media screen and (max-width:500px) {
     .headermob-main{

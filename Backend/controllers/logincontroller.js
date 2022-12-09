@@ -50,6 +50,15 @@ const isAuth =(req,res)=>{
     }
 }
 
+const isAuthAdmin =(req,res)=>{
+    try {
+        res.status(200).json(true)
+    } catch (error) {
+        res.status(200).json(false)
+    }
+}
 
 
-module.exports={registerUser, loginUser, logoutUser, isAuth}
+
+
+module.exports={registerUser, loginUser, logoutUser, isAuth, isAuthAdmin}

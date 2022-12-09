@@ -33,6 +33,11 @@ function Mobheader() {
         async function authentication() {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/isauth`, { withCredentials: true })
             Setauth(res.data)
+            if(menu==="header-col-menu"){
+                document.body.style.overflow="hidden"
+            }else{
+                document.body.style.overflow="unset"
+            }
         }
         authentication()
     },)
@@ -45,14 +50,6 @@ function Mobheader() {
     const menuClick =()=>{
         Setmenu("header-col-menu-hide")
     }
-
-    useEffect(()=>{
-        if(menu==="header-col-menu"){
-            document.body.style.overflow="hidden"
-        }else{
-            document.body.style.overflow="unset"
-        }
-    },[menu])
 
     return (
         <div className='headermob-main'>
@@ -83,7 +80,7 @@ function Mobheader() {
                     <div><Link onClick={menuClick} to={"/signup"} style={style}>Signup</Link></div>
                 </>
                 :<>
-                    <div><Link onClick={menuClick} style={style}>Account</Link></div>
+                    <div><Link onClick={menuClick} to={"/user/account/profile"} style={style}>Account</Link></div>
                     <div><Link onClick={logoutFunc} style={style}>Logout</Link></div>
                 </>}
             </div>

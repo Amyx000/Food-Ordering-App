@@ -7,5 +7,5 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 90px);
 }

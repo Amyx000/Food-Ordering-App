@@ -1,15 +1,13 @@
-
-
-.banner-img{
-    width: 100%;
-    height: 84.4vh;
-    object-fit: cover;
-    transform:scale(1.1);
-}
-
 .banner{
     overflow: hidden;
     position: relative;
+    height: calc(100vh - 90px)
+}
+
+.banner-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .banner-block{
@@ -29,16 +27,17 @@
     font-family: 'Lobster', cursive;
     font-size: 100px;
 }
-.banner-block>div:nth-child(3){
+.banner-block form{
     display: grid;
     grid-template-columns: 1fr auto;
     height: 40px;
     align-items: center;
 }
 
-.banner-block>div:nth-child(3)>div{
+.banner-block button{
     background-color: white;
     color: black;
+    border: none;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     font-size: 25px;
@@ -47,7 +46,7 @@
     align-content: center;
     padding: 5px;
 }
-.banner-block>div:nth-child(3)>input{
+.banner-block input{
     border:none;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
@@ -55,7 +54,7 @@
     outline: none;
     font-size: 20px;
     padding: 0 10px;
-}
+} 
 .banner-block input::placeholder{
     text-align: center;
 }
