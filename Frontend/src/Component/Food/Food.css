@@ -23,10 +23,6 @@
     color: rgba(29, 29, 29, 0.792);
 }
 
-.food-head>div:hover{
-    cursor: pointer;
-    color: black;
-}
 
 .food-collection{
     display: grid;
@@ -34,11 +30,12 @@
     margin-top: 20px;
     row-gap:10px;
     position: relative;
+    justify-items: center;
+    height: max-content;
 }
 
 .single-card{
     width: 300px;
-    margin: 0 auto 0 0;
 }
 
 .food-collection img{
@@ -81,7 +78,7 @@
     visibility: hidden;
     color:white;
     font-size: 40px;
-    z-index: 100;
+    z-index: 10;
     transition: all 0.4s ease-in-out;
 }
 
@@ -97,9 +94,28 @@
     color: white;
 }
 
+.food-sort{
+    display: flex !important;
+    gap:20px
+}
 
-@media screen and (max-width:650px) {
-    .single-card{
-        margin: 0 auto;
+.food-sort>div:hover{
+    font-weight: bold;
+}
+
+.filter-icon:hover{
+    font-weight: bold;
+}
+
+
+@media screen and (max-width:760px) {
+    .sort{
+        display: none !important;
+    }
+    .food-head{
+        grid-template-columns: 1fr auto auto;
+    }
+    .food-sort{
+        display: none;
     }
 }

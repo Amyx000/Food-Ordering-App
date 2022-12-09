@@ -19,7 +19,7 @@ function Home() {
                 <div>Get instant Hot & Tasty food delivered to your home </div>
                 <div>
                     <input type={"text"} placeholder="Search food/restaurants" value={search} onChange={e=>Setsearch(e.target.value)} required/>
-                    <div onClick={handleClick} onK style={{"cursor":"pointer"}}><FiSearch/></div>
+                    <div onClick={handleClick} style={{"cursor":"pointer"}}><FiSearch/></div>
                 </div>
             </div>
             <img className='banner-img' src='https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' alt=''/>

@@ -1,3 +1,4 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,7 +13,7 @@ function Checkout() {
         selectedindex: "",
         alladdress: []
     })
-    const[err,Seterr]=useState(false)
+    const [err, Seterr] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -33,7 +34,7 @@ function Checkout() {
         if (address.selectedindex) {
             dispatch(addaddress(address.alladdress[address.selectedindex]))
             navigate("/checkout/payment")
-        }else{
+        } else {
             Seterr(true)
         }
     }
@@ -47,15 +48,31 @@ function Checkout() {
                     <div className='table'>
                         <div className='checkout'>
                             <div>Select Address</div>
-                            {err&& <Errormsg clr="red" msg="Please select the address" />}
-                            <select required value={address.selectedindex} onChange={e => Setaddress(prev => ({ ...prev, selectedindex: e.target.value }))}>
-                                <option value={""} disabled>Your Address</option>
-                                {address.alladdress.map((item, index) => {
+                            {err && <Errormsg clr="red" msg="Please select the address" />}
+                            <FormControl fullWidth>
+                                <InputLabel style={{"color":"white"}} id="demo-simple-select-label">Select Address</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={address.selectedindex}
+                                    onChange={e => Setaddress(prev => ({ ...prev, selectedindex: e.target.value }))}
+                                    label="Address"
+                                    sx={{color: 'white',
+                                    '& .MuiOutlinedInput-notchedOutline': {
+                                        borderColor: 'white'
+                                    },
+                                    '& .MuiSvgIcon-root': {
+                                        color: 'white'
+                                    }}}
+                                    style={{"height":"50px"}}
+                                >
+                                    {address.alladdress.map((item, index) => {
                                     return (
-                                        <option value={index} key={index}>{item.street}, {item.city}, {item.pincode}, {item.state}</option>
+                                        <MenuItem value={index} key={index}>{item.street}, {item.city}, {item.pincode}, {item.state}</MenuItem>
                                     )
                                 })}
-                            </select>
+                                </Select>
+                            </FormControl>
                             <div style={{ "display": "flex", "justifyContent": "center", "gap": "20px" }}>
                                 <div>Total:</div>
                                 <div>{total} Rs</div>

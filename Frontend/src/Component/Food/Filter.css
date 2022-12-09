@@ -10,8 +10,10 @@
     right: 0;
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
-    z-index: 10000;
+    z-index: 100;
     cursor:default !important;
+    text-align: center;
+    padding: 10px;
 }
 .filter-hide{
     display: block !important;
@@ -24,13 +26,16 @@
     right: 0;
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
-    z-index: 10000;
+    z-index: 100;
     cursor:default !important;
+    text-align: center;
+    padding: 10px;
 }
 
 .filter-section{
-    display:flex;
-    justify-content: space-around;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     margin-top: 20px;
 }
 .filter-checkbox{
@@ -54,4 +59,27 @@
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.filter-section-sort{
+    display: none;
+}
+
+@media screen and (max-width:760px) {
+    .filter-section-sort{
+        display: block;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .filter-section{
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+    }
+    .filter-section>div:nth-child(3){
+        grid-column: 1/3;
+    }
+    .checkbox-price{
+        flex-direction: row;
+    }
 }
