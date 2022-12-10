@@ -21,7 +21,7 @@ function Orderplaced() {
   }, [])
 
   return (
-    <div style={{ "height": "100vh", "display": "grid", "alignItems": "center" }}>
+    <div className='placed-main' style={{"display": "grid", "alignItems": "center" }}>
       <div className='placed'>
         <div style={{ "color": "green", "fontWeight": "bold" }}>Order Placed Successfully</div>
         <div>You will get your delicious food soon..</div>
