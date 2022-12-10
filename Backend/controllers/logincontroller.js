@@ -26,7 +26,7 @@ const loginUser=async(req,res)=>{
                 res.header('Access-Control-Allow-Credentials', true);
                 res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE,OPTIONS');
                 res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-                res.cookie("token",token,{httpOnly:true,sameSite:'none',secure:true,expires: new Date(Date.now() + 2592000000)})
+                res.cookie("token",token,{httpOnly:true,expires: new Date(Date.now() + 2592000000)})
                 res.status(200).json("Login Success")
 
             }else{res.status(400).json("Wrong Credentials")}
@@ -38,7 +38,7 @@ const loginUser=async(req,res)=>{
 
 const logoutUser =async (req,res)=>{
     try {
-        res.clearCookie("token",{httpOnly: true,sameSite: 'none',secure:true})
+        res.clearCookie("token",{httpOnly: true})
         res.status(200).json("Logout Success")
     } catch (error) {
      console.log(error)   
