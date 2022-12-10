@@ -23,7 +23,7 @@ const loginUser=async(req,res)=>{
             const isuser= await bcrypt.compare(req.body.password, user.password)
             if(isuser){
                 const token = jwt.sign({id:user._id,type:user.type},process.env.JWT_SECKEY,{expiresIn:"3d"})
-                res.cookie("token",token,{httpOnly:true,samSite:"none",expires: new Date(Date.now() + 2592000000)})
+                res.cookie("token",token,{httpOnly:true,samSite:"none",secure:true,expires: new Date(Date.now() + 2592000000)})
                 res.status(200).json("Login Success")
 
             }else{res.status(400).json("Wrong Credentials")}
