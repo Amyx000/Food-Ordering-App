@@ -18,7 +18,7 @@ function Addfood() {
         try {
             await axios.post(`${process.env.REACT_APP_BACKEND_URL}/addfood`, food, { withCredentials: true })
             Setfood({
-                // foodname:"",
+                foodname:"",
                 foodCategory: "",
                 foodimg: "",
                 cost: "",

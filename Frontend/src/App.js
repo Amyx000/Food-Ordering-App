@@ -31,15 +31,12 @@ function App() {
   const [isAdmin, SetisAdmin] = useState(false)
 
   useEffect(() => {
-    async function checkadmin() {
-      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/isauthadmin`, { withCredentials: true })
-      SetisAdmin(res.data)
-
-    }
-    checkadmin()
-  }, [SetisAdmin])
-
-  console.log(isAdmin)
+      async function checkadmin() {
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/isauthadmin`, { withCredentials: true })
+        SetisAdmin(res.data)
+      }
+      checkadmin()
+  }, [isAdmin])
 
   return (
     <div style={{ "marginTop": "90px" }}>

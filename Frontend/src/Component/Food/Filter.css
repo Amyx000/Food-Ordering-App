@@ -37,6 +37,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     margin-top: 20px;
+    height: 100px;
+    overflow: auto;
+}
+.filter-section::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgb(66, 65, 65);
+    border-radius: 5px;
+}
+.filter-section::-webkit-scrollbar-thumb{
+    background-color: rgb(36, 36, 36);
+    border-radius: 5px;
 }
 .filter-checkbox{
     margin-top: 10px;

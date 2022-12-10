@@ -43,3 +43,13 @@ body{
     align-items: center;
     height: calc(100vh - 90px);
 }
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 5px;
+}
