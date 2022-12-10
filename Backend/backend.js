@@ -9,7 +9,7 @@ const userroute =require("./routes/userroute")
 const orderroute=require("./routes/orderroute")
 
 app.use(express.json())
-app.use(cors({credentials: true, origin: process.env.FRONTEND_URL,allowedHeaders: ["set-cookie", "Content-Type", "Access-Control-Allow-Origin"]}))
+app.use(cors({credentials: true, origin: process.env.FRONTEND_URL}))
 app.use(cookieParser())
 
 app.use("/",foodroute)

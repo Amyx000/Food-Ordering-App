@@ -24,6 +24,7 @@ const loginUser=async(req,res)=>{
             if(isuser){
                 const token = jwt.sign({id:user._id,type:user.type},process.env.JWT_SECKEY,{expiresIn:"3d"})
                 res.cookie("token",token,{httpOnly:true,sameSite:'none',secure:true,expires: new Date(Date.now() + 2592000000)})
+                res.setHeader("Access-Control-Allow-Credentials", "true")
                 res.status(200).json("Login Success")
 
             }else{res.status(400).json("Wrong Credentials")}
