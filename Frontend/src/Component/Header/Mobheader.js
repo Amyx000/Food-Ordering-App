@@ -40,7 +40,7 @@ function Mobheader() {
             }
         }
         authentication()
-    },)
+    },[menu])
 
     const logoutFunc = async () => {
         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, { withCredentials: true })
