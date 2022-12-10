@@ -74,7 +74,7 @@ function Mobheader() {
                 </div>
             </div>
             <div className={menu} style={style}>
-                <div><Link onClick={menuClick} to={"/login"} style={style}>About</Link></div>
+                <div><Link onClick={menuClick} to={"/about"} style={style}>About</Link></div>
                 {!auth ? <>
                     <div><Link onClick={menuClick} to={"/login"} style={style}>Login</Link></div>
                     <div><Link onClick={menuClick} to={"/signup"} style={style}>Signup</Link></div>
