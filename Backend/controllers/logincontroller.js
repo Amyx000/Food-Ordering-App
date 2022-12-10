@@ -23,7 +23,7 @@ const loginUser=async(req,res)=>{
             const isuser= await bcrypt.compare(req.body.password, user.password)
             if(isuser){
                 const token = jwt.sign({id:user._id,type:user.type},process.env.JWT_SECKEY,{expiresIn:"3d"})
-                res.cookie("token",token,{httpOnly:true,sameSite:'none',secure:true,expires: new Date(Date.now() + 2592000000)})
+                res.cookie("token",token,{httpOnly:true,domain:"https://food--ordering--app.vercel.app",sameSite:'none',secure:true,expires: new Date(Date.now() + 2592000000)})
                 res.status(200).json("Login Success")
 
             }else{res.status(400).json("Wrong Credentials")}
@@ -35,7 +35,7 @@ const loginUser=async(req,res)=>{
 
 const logoutUser =async (req,res)=>{
     try {
-        res.clearCookie("token",{httpOnly: true,sameSite: 'none',secure:true})
+        res.clearCookie("token",{httpOnly: true,sameSite: 'none',secure:true,domain:"https://food--ordering--app.vercel.app"})
         res.status(200).json("Logout Success")
     } catch (error) {
      console.log(error)   
