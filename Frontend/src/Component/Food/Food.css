@@ -1,6 +1,7 @@
 
 .food-main{
     margin: 0 40px;
+    overflow-x: hidden;
 }
 .food-head{
     display: grid;
