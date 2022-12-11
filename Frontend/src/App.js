@@ -39,7 +39,7 @@ function App() {
   }, [isAdmin])
 
   return (
-    <div style={{ "marginTop": "90px" }}>
+    <div style={{ "marginTop": "90px"}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Home /></>} />
