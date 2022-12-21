@@ -127,7 +127,7 @@ function Food() {
   return (
     <div className='food-main'>
       <div className='food-head'>
-        <div style={{ "fontWeight": "bold", "color": "black" }} onClick={() => scrollFunction(food)}>{food.length} Food items</div>
+        <div style={{ "fontWeight": "bold", "color": "black" }} onClick={() => scrollFunction(food)}>{showfood.length} Food items</div>
         <div className='food-sort'>
           <Selectedtab property={"highlight"}>
             <div className='sort' onClick={() => sort_func_time(true)}>Delivery Time</div>
