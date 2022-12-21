@@ -169,7 +169,7 @@ function Food() {
           </>
             : <div style={{"height":"350px"}}>No Food Item Found</div>}
         </div>}
-      {(pagination.pageNo<=Math.ceil(food.length/pagination.pageSize))||(showfood.length!==food.length)||(showfood.length<=pagination.pageSize)?<div style={{ "overflowX": "hidden", "padding": "20px 0 40px", "textAlign": "center" }}><ClipLoader color="black" /></div>:null}
+      {(pagination.pageNo<=Math.ceil(food.length/pagination.pageSize) && showfood.length>=pagination.pageSize && showfood.length!==food.length)?<div style={{ "overflowX": "hidden", "padding": "20px 0 40px", "textAlign": "center" }}><ClipLoader color="black" /></div>:null}
     </div>
   )
 }
