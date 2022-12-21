@@ -28,12 +28,12 @@ function Food() {
       const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getfood`, { withCredentials: true })
       dispatch(getallfoods(res.data))
       Setfood(res.data)
-      if(search){
+      // if(search){
         Setshowfood(res.data.filter((item) => {
-          return item.foodname.match(new RegExp(search, "i")) || item.restaurant.match(new RegExp(search, "i"))
+          return item.foodname.match(new RegExp(search, "i")).slice(0, pagination.pageSize) || item.restaurant.match(new RegExp(search, "i")).slice(0, pagination.pageSize)
         }))
-      }
-      Setshowfood([...res.data.slice(0, pagination.pageSize)])
+      // }
+      // Setshowfood([...res.data.slice(0, pagination.pageSize)])
       Setloader(false)
     } catch (error) {
       console.log(error)
